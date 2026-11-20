@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    background-color: #090A0F;
+    color: #F1F5F9;
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #090A0F;
+    overflow-x: hidden;
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 24px -4px rgba(124, 58, 237, 0.55), 0 0 48px -12px rgba(37, 99, 235, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 36px 0px rgba(124, 58, 237, 0.78), 0 0 64px -8px rgba(37, 99, 235, 0.58);
+  }
+}
+
+.btn-glow-primary {
+  animation: glowPulse 3.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-glow-primary {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
