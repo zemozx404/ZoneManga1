@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { ContactSection } from './components/ContactSection';
 import { FeaturesSection } from './components/FeaturesSection';
 import { Footer } from './components/Footer';
@@ -6,11 +6,36 @@ import { GuideSection } from './components/GuideSection';
 import { Hero } from './components/Hero';
 import { Navbar } from './components/Navbar';
 import { RepoSection } from './components/RepoSection';
+import { type ThemeMode } from './components/ThemeSwitcher';
 import { Toast } from './components/Toast';
 
+const THEME_STORAGE_KEY = 'zonemanga-theme';
+
+function getInitialTheme(): ThemeMode {
+  try {
+    const saved = window.localStorage.getItem(THEME_STORAGE_KEY);
+    if (saved === 'high-contrast' || saved === 'deep-midnight') {
+      return saved;
+    }
+  } catch {
+    // Ignore storage access errors
+  }
+  return 'deep-midnight';
+}
+
 export default function App() {
+  const [theme, setTheme] = useState<ThemeMode>(getInitialTheme);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const toastTimerRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    try {
+      window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+    } catch {
+      // Ignore storage access errors
+    }
+  }, [theme]);
 
   const showToast = useCallback((message: string) => {
     if (toastTimerRef.current !== null) {
@@ -57,10 +82,10 @@ export default function App() {
   );
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#090A0F] text-slate-100">
+    <div className="min-h-screen flex flex-col bg-[var(--zm-canvas)] text-[var(--zm-text-primary)] transition-colors duration-200">
       <Navbar />
       <main className="flex-1">
-        <Hero />
+        <Hero theme={theme} onChangeTheme={setTheme} />
         <FeaturesSection />
         <RepoSection onCopyUrl={handleCopy} />
         <GuideSection onCopyText={handleCopy} />

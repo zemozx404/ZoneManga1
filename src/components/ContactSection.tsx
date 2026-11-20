@@ -2,15 +2,15 @@ import { ArrowUpRight } from 'lucide-react';
 
 export function ContactSection() {
   return (
-    <section id="kontak" className="py-16 sm:py-24 border-t border-white/[0.06]">
+    <section id="kontak" className="py-16 sm:py-24 border-t border-[var(--zm-divider)]">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center">
-        <p className="text-xs sm:text-sm font-semibold text-violet-400 tracking-wide mb-2">
+        <p className="text-xs sm:text-sm font-semibold text-[var(--zm-accent-violet)] tracking-wide mb-2">
           Dukungan &amp; Masukan
         </p>
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white text-balance">
           Hubungi Developer / Lapor Bug
         </h2>
-        <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
+        <p className="mt-3 text-sm sm:text-base text-[var(--zm-text-secondary)] max-w-xl mx-auto leading-relaxed">
           Menemukan kendala pada ekstensi, error pemutaran, atau ingin mengajukan fitur baru? Hubungi pengembang secara langsung melalui kanal resmi di bawah ini.
         </p>
 
@@ -22,10 +22,10 @@ export function ContactSection() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Hubungi Developer melalui WhatsApp"
-            className="group flex items-center justify-between gap-4 px-6 py-5 rounded-2xl bg-[#13161F]/85 backdrop-blur-xl border border-white/[0.08] hover:border-[#25D366]/50 hover:bg-[#161B26] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]"
+            className="group flex items-center justify-between gap-4 px-6 py-5 rounded-2xl bg-[var(--zm-surface)] backdrop-blur-xl hc:backdrop-blur-none border border-[var(--zm-border)] hover:border-[#25D366]/60 hc:hover:border-white hover:bg-[#161B26] hc:hover:bg-zinc-900 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]"
           >
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[#25D366]/15 border border-[#25D366]/30 flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-105">
+              <div className="w-12 h-12 rounded-xl bg-[#25D366]/15 border border-[#25D366]/30 hc:border-[#25D366] flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-105">
                 {/* Official WhatsApp Logo SVG */}
                 <svg
                   viewBox="0 0 32 32"
@@ -39,7 +39,7 @@ export function ContactSection() {
               <span className="text-base font-bold text-white">WhatsApp</span>
             </div>
             <ArrowUpRight
-              className="w-4 h-4 text-slate-400 group-hover:text-[#25D366] transition-colors shrink-0"
+              className="w-4 h-4 text-[var(--zm-text-muted)] group-hover:text-[#25D366] transition-colors shrink-0"
               aria-hidden="true"
             />
           </a>
@@ -50,10 +50,10 @@ export function ContactSection() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Hubungi Developer melalui Telegram"
-            className="group flex items-center justify-between gap-4 px-6 py-5 rounded-2xl bg-[#13161F]/85 backdrop-blur-xl border border-white/[0.08] hover:border-[#2AABEE]/50 hover:bg-[#161B26] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2AABEE]"
+            className="group flex items-center justify-between gap-4 px-6 py-5 rounded-2xl bg-[var(--zm-surface)] backdrop-blur-xl hc:backdrop-blur-none border border-[var(--zm-border)] hover:border-[#2AABEE]/60 hc:hover:border-white hover:bg-[#161B26] hc:hover:bg-zinc-900 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2AABEE]"
           >
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[#2AABEE]/15 border border-[#2AABEE]/30 flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-105">
+              <div className="w-12 h-12 rounded-xl bg-[#2AABEE]/15 border border-[#2AABEE]/30 hc:border-[#2AABEE] flex items-center justify-center shrink-0 transition-transform duration-200 group-hover:scale-105">
                 {/* Official Telegram Logo SVG */}
                 <svg
                   viewBox="0 0 32 32"
@@ -67,7 +67,7 @@ export function ContactSection() {
               <span className="text-base font-bold text-white">Telegram</span>
             </div>
             <ArrowUpRight
-              className="w-4 h-4 text-slate-400 group-hover:text-[#2AABEE] transition-colors shrink-0"
+              className="w-4 h-4 text-[var(--zm-text-muted)] group-hover:text-[#2AABEE] transition-colors shrink-0"
               aria-hidden="true"
             />
           </a>

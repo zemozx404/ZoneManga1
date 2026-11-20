@@ -1,20 +1,53 @@
 @import "tailwindcss";
 
+@custom-variant hc (&:where([data-theme="high-contrast"], [data-theme="high-contrast"] *));
+
 @theme {
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
+:root {
+  --zm-canvas: #090A0F;
+  --zm-header-bg: rgba(9, 10, 15, 0.80);
+  --zm-surface: rgba(19, 22, 31, 0.80);
+  --zm-surface-solid: #13161F;
+  --zm-surface-inner: rgba(9, 10, 15, 0.90);
+  --zm-border: rgba(255, 255, 255, 0.08);
+  --zm-divider: rgba(255, 255, 255, 0.06);
+  --zm-text-primary: #FFFFFF;
+  --zm-text-secondary: #CBD5E1;
+  --zm-text-muted: #94A3B8;
+  --zm-accent-violet: #A78BFA;
+  --zm-accent-blue: #60A5FA;
+}
+
+[data-theme="high-contrast"] {
+  --zm-canvas: #000000;
+  --zm-header-bg: #000000;
+  --zm-surface: #0A0A0F;
+  --zm-surface-solid: #0A0A0F;
+  --zm-surface-inner: #000000;
+  --zm-border: rgba(255, 255, 255, 0.42);
+  --zm-divider: rgba(255, 255, 255, 0.28);
+  --zm-text-primary: #FFFFFF;
+  --zm-text-secondary: #F4F4F5;
+  --zm-text-muted: #E4E4E7;
+  --zm-accent-violet: #DDD6FE;
+  --zm-accent-blue: #BAE6FD;
+}
+
 @layer base {
   html {
-    background-color: #090A0F;
-    color: #F1F5F9;
+    background-color: var(--zm-canvas);
+    color: var(--zm-text-primary);
     font-family: var(--font-sans);
     scroll-behavior: smooth;
   }
 
   body {
-    background-color: #090A0F;
+    background-color: var(--zm-canvas);
+    color: var(--zm-text-primary);
     overflow-x: hidden;
   }
 }
@@ -30,6 +63,11 @@
 
 .btn-glow-primary {
   animation: glowPulse 3.2s ease-in-out infinite;
+}
+
+[data-theme="high-contrast"] .btn-glow-primary {
+  animation: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.45);
 }
 
 @media (prefers-reduced-motion: reduce) {

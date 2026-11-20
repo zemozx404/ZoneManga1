@@ -26,8 +26,8 @@ const FEATURES: FeatureItem[] = [
     description:
       'Melewati halaman verifikasi dan proteksi Cloudflare secara otomatis di balik layar agar halaman komik, novel, dan episode anime langsung terbuka tanpa hambatan.',
     icon: ShieldCheck,
-    accentClass: 'from-violet-600/20 to-indigo-600/15 border-violet-500/30',
-    iconColorClass: 'text-violet-300',
+    accentClass: 'from-violet-600/20 to-indigo-600/15 border-violet-500/30 hc:from-zinc-900 hc:to-zinc-900 hc:border-white/50',
+    iconColorClass: 'text-violet-300 hc:text-white',
     spanClass: 'md:col-span-3',
   },
   {
@@ -37,8 +37,8 @@ const FEATURES: FeatureItem[] = [
     description:
       'Unduh chapter manga, manhua, dan volume light novel favorit ke memori ponsel untuk membaca dengan lancar kapan pun tanpa koneksi internet atau kuota.',
     icon: CloudDownload,
-    accentClass: 'from-blue-600/20 to-cyan-600/15 border-blue-500/30',
-    iconColorClass: 'text-blue-300',
+    accentClass: 'from-blue-600/20 to-cyan-600/15 border-blue-500/30 hc:from-zinc-900 hc:to-zinc-900 hc:border-white/50',
+    iconColorClass: 'text-blue-300 hc:text-white',
     spanClass: 'md:col-span-3',
   },
   {
@@ -48,8 +48,8 @@ const FEATURES: FeatureItem[] = [
     description:
       'Filter dan jelajahi sumber ekstensi berbahasa Indonesia, Inggris, maupun berbagai bahasa global lainnya secara rapi dalam satu daftar.',
     icon: Languages,
-    accentClass: 'from-indigo-600/20 to-violet-600/15 border-indigo-500/30',
-    iconColorClass: 'text-indigo-300',
+    accentClass: 'from-indigo-600/20 to-violet-600/15 border-indigo-500/30 hc:from-zinc-900 hc:to-zinc-900 hc:border-white/50',
+    iconColorClass: 'text-indigo-300 hc:text-white',
     spanClass: 'md:col-span-2',
   },
   {
@@ -59,8 +59,8 @@ const FEATURES: FeatureItem[] = [
     description:
       'Dukungan mode baca webtoon vertikal, pembaca teks novel yang nyaman di mode gelap, serta pemutar streaming anime resolusi HD.',
     icon: Layers,
-    accentClass: 'from-violet-600/20 to-blue-600/15 border-violet-500/30',
-    iconColorClass: 'text-violet-300',
+    accentClass: 'from-violet-600/20 to-blue-600/15 border-violet-500/30 hc:from-zinc-900 hc:to-zinc-900 hc:border-white/50',
+    iconColorClass: 'text-violet-300 hc:text-white',
     spanClass: 'md:col-span-2',
   },
   {
@@ -70,24 +70,24 @@ const FEATURES: FeatureItem[] = [
     description:
       'Masuk dengan akun Google untuk menyimpan daftar pustaka, penanda chapter terakhir, dan daftar ekstensi agar aman saat berganti perangkat.',
     icon: RefreshCw,
-    accentClass: 'from-blue-600/20 to-indigo-600/15 border-blue-500/30',
-    iconColorClass: 'text-blue-300',
+    accentClass: 'from-blue-600/20 to-indigo-600/15 border-blue-500/30 hc:from-zinc-900 hc:to-zinc-900 hc:border-white/50',
+    iconColorClass: 'text-blue-300 hc:text-white',
     spanClass: 'md:col-span-2',
   },
 ];
 
 export function FeaturesSection() {
   return (
-    <section id="fitur" className="py-16 sm:py-24 border-t border-white/[0.06]">
+    <section id="fitur" className="py-16 sm:py-24 border-t border-[var(--zm-divider)]">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-2xl mb-10">
-          <p className="text-xs sm:text-sm font-semibold text-violet-400 tracking-wide mb-2">
+          <p className="text-xs sm:text-sm font-semibold text-[var(--zm-accent-violet)] tracking-wide mb-2">
             Features
           </p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white text-balance">
             Fitur Utama ZoneManga
           </h2>
-          <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-[var(--zm-text-secondary)] leading-relaxed">
             Dirancang untuk kenyamanan membaca komik, light novel, dan menonton anime di perangkat Android dengan performa ringan dan bebas iklan.
           </p>
         </div>
@@ -98,7 +98,7 @@ export function FeaturesSection() {
             return (
               <article
                 key={feature.title}
-                className={`${feature.spanClass} flex flex-col justify-between p-6 rounded-2xl bg-[#13161F]/80 backdrop-blur-xl border border-white/[0.08] hover:border-violet-500/35 transition-colors duration-200`}
+                className={`${feature.spanClass} flex flex-col justify-between p-6 rounded-2xl bg-[var(--zm-surface)] backdrop-blur-xl hc:backdrop-blur-none border border-[var(--zm-border)] hover:border-violet-500/35 hc:hover:border-white transition-colors duration-200`}
               >
                 <div>
                   <div className="flex items-center justify-between gap-3 mb-5">
@@ -111,8 +111,8 @@ export function FeaturesSection() {
                       />
                     </div>
 
-                    <div className="flex items-center gap-2 text-xs text-slate-400">
-                      <span className="font-semibold text-violet-300 tabular-nums">
+                    <div className="flex items-center gap-2 text-xs text-[var(--zm-text-muted)]">
+                      <span className="font-semibold text-[var(--zm-accent-violet)] tabular-nums">
                         {feature.index}
                       </span>
                       <span aria-hidden="true">·</span>
@@ -123,7 +123,7 @@ export function FeaturesSection() {
                   <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
                     {feature.title}
                   </h3>
-                  <p className="mt-2.5 text-sm text-slate-300 leading-relaxed">
+                  <p className="mt-2.5 text-sm text-[var(--zm-text-secondary)] leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

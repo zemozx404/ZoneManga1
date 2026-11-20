@@ -4,8 +4,10 @@ interface AppLogoProps {
   size?: 'sm' | 'md' | 'lg';
 }
 
+const LOGO_CANDIDATES = ['/logo.jpg', '/logo.jpg.jpeg'] as const;
+
 export function AppLogo({ size = 'md' }: AppLogoProps) {
-  const [imgError, setImgError] = useState(false);
+  const [candidateIndex, setCandidateIndex] = useState(0);
 
   const sizeClasses = {
     sm: 'w-8 h-8 rounded-lg',
@@ -13,16 +15,18 @@ export function AppLogo({ size = 'md' }: AppLogoProps) {
     lg: 'w-12 h-12 rounded-2xl',
   }[size];
 
-  if (!imgError) {
+  const currentSrc = LOGO_CANDIDATES[candidateIndex];
+
+  if (currentSrc) {
     return (
       <div
         className={`${sizeClasses} relative overflow-hidden shrink-0 bg-[#13161F] ring-1 ring-white/15 shadow-lg shadow-violet-950/30`}
       >
         <img
-          src="/logo.jpg"
+          src={currentSrc}
           alt="Logo ZoneManga"
           referrerPolicy="no-referrer"
-          onError={() => setImgError(true)}
+          onError={() => setCandidateIndex((prev) => prev + 1)}
           className="w-full h-full object-cover"
         />
       </div>
