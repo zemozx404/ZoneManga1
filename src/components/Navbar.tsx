@@ -27,6 +27,12 @@ export function Navbar() {
           className="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300"
         >
           <a
+            href="#fitur"
+            className="hover:text-white transition-colors whitespace-nowrap shrink-0 py-1"
+          >
+            Fitur
+          </a>
+          <a
             href="#daftar-repo"
             className="hover:text-white transition-colors whitespace-nowrap shrink-0 py-1"
           >

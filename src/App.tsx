@@ -1,5 +1,6 @@
 import { useCallback, useRef, useState } from 'react';
 import { ContactSection } from './components/ContactSection';
+import { FeaturesSection } from './components/FeaturesSection';
 import { Footer } from './components/Footer';
 import { GuideSection } from './components/GuideSection';
 import { Hero } from './components/Hero';
@@ -60,6 +61,7 @@ export default function App() {
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <FeaturesSection />
         <RepoSection onCopyUrl={handleCopy} />
         <GuideSection onCopyText={handleCopy} />
         <ContactSection />
