@@ -49,8 +49,9 @@ export function Navbar() {
         {/* Zone 3: Single Primary Action */}
         <div className="flex items-center shrink-0">
           <a
-            href="/ZoneManga-v0.9.97.apk"
-            download="ZoneManga-v0.9.97.apk"
+            href="https://www.mediafire.com/file/j3s6sccmq4ablsc/ZoneManga-v0.9.97.apk/file"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-violet-600 to-blue-600 hover:from-violet-500 hover:to-blue-500 transition-all duration-200 shadow-md shadow-violet-950/50 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
           >
             <Download className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />

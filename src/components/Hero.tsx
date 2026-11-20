@@ -131,12 +131,13 @@ export function Hero() {
             {/* Primary & Secondary Action Buttons */}
             <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto">
               <a
-                href="/ZoneManga-v0.9.97.apk"
-                download="ZoneManga-v0.9.97.apk"
+                href="https://www.mediafire.com/file/j3s6sccmq4ablsc/ZoneManga-v0.9.97.apk/file"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-glow-primary inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl text-sm sm:text-base font-bold text-white bg-gradient-to-r from-violet-600 via-indigo-600 to-blue-600 hover:from-violet-500 hover:via-indigo-500 hover:to-blue-500 transition-all duration-200 active:scale-[0.99] whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#090A0F]"
               >
                 <Download className="w-5 h-5 shrink-0" aria-hidden="true" />
-                <span>Download APK v0.9.97 (45 MB)</span>
+                <span>Download APK v0.9.97 (60.4 MB)</span>
               </a>
 
               <a
@@ -152,7 +153,7 @@ export function Hero() {
             <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs sm:text-sm text-slate-400 tabular-nums">
               <span>Versi 0.9.97</span>
               <span aria-hidden="true">·</span>
-              <span>Ukuran 45 MB</span>
+              <span>Ukuran 60.4 MB</span>
               <span aria-hidden="true">·</span>
               <span>Android 8.0+</span>
               <span aria-hidden="true">·</span>
